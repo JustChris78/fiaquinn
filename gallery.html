@@ -3,96 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery — Fia Quinn</title>
-  <meta name="description" content="Photos from Fia Quinn — Manchester life, thrifted finds, and charity shop adventures.">
+  <title>Gallery &mdash; Fia Quinn</title>
+  <meta name="description" content="A mix of days out, things found, and occasional decent outfits. From Fia Quinn.">
   <link rel="stylesheet" href="/style.css">
   <link rel="canonical" href="https://fiaquinn.co.uk/gallery.html">
-</head>
-<body>
   <style>
-    .gallery-intro { margin-bottom: 2rem; color: var(--muted); }
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
+      gap: 0.75rem;
       margin-bottom: 3rem;
     }
-    .gallery-item { position: relative; overflow: hidden; border-radius: 3px; }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 3px;
+      background: var(--border);
+    }
     .gallery-item img {
       width: 100%; height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
     }
-    .gallery-item:hover img { transform: scale(1.02); }
+    .gallery-item:hover img { transform: scale(1.03); }
     .gallery-item.tall { grid-row: span 2; }
     .gallery-caption {
       position: absolute; bottom: 0; left: 0; right: 0;
       padding: 0.6rem 0.8rem;
-      background: linear-gradient(transparent, rgba(0,0,0,0.45));
-      color: #fff;
+      background: linear-gradient(transparent, rgba(0,0,0,0.4));
+      color: rgba(255,255,255,0.9);
       font-size: 0.78rem;
       letter-spacing: 0.02em;
       opacity: 0;
-      transition: opacity 0.2s;
+      transition: opacity 0.25s;
     }
     .gallery-item:hover .gallery-caption { opacity: 1; }
+    .gallery-intro { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; }
     @media (max-width: 500px) {
-      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; gap: 0.5rem; }
       .gallery-item.tall { grid-row: span 1; }
     }
   </style>
+</head>
+<body>
 <header>
   <div class="header-inner">
     <a href="/" class="site-title">Fia Quinn</a>
     <nav>
-      <a href="/" >Home</a>
-      <a href="/blog/" >Blog</a>
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
       <a href="/gallery.html" class="active">Gallery</a>
-      <a href="/about.html" >About</a>
+      <a href="/about.html">About</a>
     </nav>
   </div>
 </header>
 <main>
   <div class="post-header">
-    <h1 style="font-family:var(--font-serif);font-size:2rem;font-weight:400">Gallery</h1>
-    <p class="gallery-intro" style="margin-top:0.6rem">A mix of days out in Manchester, things I've found, and the occasional decent outfit.</p>
+    <h1 style="font-family:var(--font-serif);font-size:2rem;font-weight:400;margin-bottom:0.5rem">Gallery</h1>
+    <p class="gallery-intro">Days out. Things found. The occasional outfit that worked.</p>
   </div>
 
   <div class="gallery-grid">
 
     <div class="gallery-item tall">
-      <img src="/img/fia-portrait.jpg" alt="Fia in Manchester's Northern Quarter, vintage camel coat" loading="lazy">
-      <span class="gallery-caption">Northern Quarter, autumn</span>
+      <img src="/img/fia-portrait.jpg" alt="Fia Quinn" loading="lazy">
+      <span class="gallery-caption">good afternoon</span>
     </div>
 
     <div class="gallery-item">
-      <img src="/img/fia-cafe.jpg" alt="Flat white and a knit — a Chorlton morning" loading="lazy">
-      <span class="gallery-caption">Chorlton morning ritual</span>
+      <img src="/img/fia-cafe.jpg" alt="Morning coffee" loading="lazy">
+      <span class="gallery-caption">morning sorted</span>
     </div>
 
     <div class="gallery-item">
-      <img src="/img/fia-flatlay.jpg" alt="This week's charity shop finds laid out" loading="lazy">
-      <span class="gallery-caption">This week's finds</span>
+      <img src="/img/fia-flatlay.jpg" alt="This week's finds" loading="lazy">
+      <span class="gallery-caption">good week</span>
     </div>
 
     <div class="gallery-item tall">
-      <img src="/img/fia-outfit.jpg" alt="Vintage trousers, white blouse, DMs — under £20 total" loading="lazy">
-      <span class="gallery-caption">Under £20 total</span>
+      <img src="/img/fia-outfit.jpg" alt="Outfit details" loading="lazy">
+      <span class="gallery-caption">happy with this one</span>
     </div>
 
     <div class="gallery-item">
-      <img src="/img/fia-browsing.jpg" alt="Browsing for silk at the Oxfam on Oxford Road" loading="lazy">
-      <span class="gallery-caption">Oxford Road Oxfam, Tuesday afternoon</span>
+      <img src="/img/fia-browsing.jpg" alt="Browsing" loading="lazy">
+      <span class="gallery-caption">found this on a whim</span>
     </div>
 
     <div class="gallery-item">
-      <img src="/img/fia-market.jpg" alt="At the vintage market in Manchester" loading="lazy">
-      <span class="gallery-caption">Bury Market, September</span>
+      <img src="/img/fia-market.jpg" alt="Market day" loading="lazy">
+      <span class="gallery-caption">market day</span>
     </div>
 
   </div>
-</main><footer>
+</main>
+<footer>
   <p>&copy; 2026 Fia Quinn &middot; Manchester &middot; <a href="mailto:fia@fiaquinn.co.uk">fia@fiaquinn.co.uk</a> &middot; <a href="/legal.html" style="font-size:0.75rem;opacity:0.5">Disclosure</a></p>
 </footer>
 </body>
