@@ -3,10 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fia Quinn — Affordable &amp; Thrift Fashion, Manchester</title>
-  <meta name="description" content="Affordable and thrift fashion from Manchester. Charity shop finds, styling tips, and honest reviews.">
+  <title>Fia Quinn &mdash; Affordable &amp; Thrift Fashion, Manchester</title>
+  <meta name="description" content="Affordable and thrift fashion from Manchester. Charity shop finds, styling tips, and honest reviews from Fia Quinn.">
   <link rel="stylesheet" href="/style.css">
   <link rel="canonical" href="https://fiaquinn.co.uk/">
+  <style>
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 3rem;
+      align-items: center;
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+    .hero-split .hero-text { text-align: left; }
+    .hero-split h1 {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+    .hero-split h1 em { font-style: italic; color: var(--accent); }
+    .hero-split p { color: var(--muted); margin-bottom: 1.6rem; font-size: 1rem; }
+    .hero-portrait {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 3px;
+      display: block;
+    }
+    .about-strip {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .about-strip img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+    .about-strip h2 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+    .about-strip p { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.8rem; }
+    @media (max-width: 640px) {
+      .hero-split { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-split .hero-img-wrap { order: -1; }
+      .hero-portrait { aspect-ratio: 4/3; object-position: center 20%; }
+      .hero-split h1 { font-size: 1.9rem; }
+      .about-strip { grid-template-columns: 1fr; }
+      .about-strip img { max-width: 220px; }
+    }
+  </style>
 </head>
 <body>
 <header>
@@ -14,45 +73,64 @@
     <a href="/" class="site-title">Fia Quinn</a>
     <nav>
       <a href="/" class="active">Home</a>
-      <a href="/blog/" >Blog</a>
-      <a href="/about.html" >About</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
     </nav>
   </div>
 </header>
 <main>
-<div class="hero">
-  <p class="hero-kicker">Manchester &mdash; Thrift Fashion &mdash; Real Prices</p>
-  <h1>Fashion for the rest of us.<br><em>Found, not bought.</em></h1>
-  <p>Hi, I'm Fia. I write about building a wardrobe you actually love — without spending very much. Charity shops, Vinted, the odd COS sale buy. Based in Manchester.</p>
-  <a href="/blog/" class="hero-cta">Read the blog &rarr;</a>
-</div>
-<p class="section-label">Recent posts</p>
-<ul class="post-list">
+
+  <div class="hero-split">
+    <div class="hero-text">
+      <p class="hero-kicker" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.8rem">Manchester &mdash; Thrift Fashion &mdash; Real Prices</p>
+      <h1>Fashion for the rest of us.<br><em>Found, not bought.</em></h1>
+      <p>Hi, I'm Fia. I write about building a wardrobe you actually love without spending very much. Charity shops, Vinted, the occasional COS sale. Based in Manchester.</p>
+      <a href="/blog/" class="hero-cta">Read the blog &rarr;</a>
+    </div>
+    <div class="hero-img-wrap">
+      <img class="hero-portrait" src="/img/fia-portrait.jpg" alt="Fia Quinn in Manchester's Northern Quarter" loading="eager">
+    </div>
+  </div>
+
+  <div class="about-strip">
+    <img src="/img/fia-browsing.jpg" alt="Fia browsing in a charity shop" loading="lazy">
+    <div>
+      <h2>Hi, I'm Fia.</h2>
+      <p>I'm Irish, I live in Chorlton, and I've been in the charity shops of Manchester since I arrived here at 18 with very little money and a lot of opinions about clothes.</p>
+      <p>I grew up somewhere without much fashion culture, which meant I spent years looking at clothes online before I could ever buy any. It turns out that's quite a good education. I know what I'm looking at when I pick something up.</p>
+      <p>This blog is the honest version of what thrift fashion in Manchester actually looks like &mdash; specific shops, real prices, things that work and things that don't.</p>
+      <a href="/about.html" class="read-more">More about me &rarr;</a>
+    </div>
+  </div>
+
+  <p class="section-label">Recent posts</p>
+  <ul class="post-list">
     <li>
       <div class="post-meta">June 7, 2026</div>
       <h2><a href="/blog/three-years-one-city.html">Three Years, One City: What Manchester Has Done to My Wardrobe</a></h2>
-      <p class="post-excerpt">As I sit here, reflecting on my time in Manchester, I'm struck by how much this city has changed my relationship with clothes. It's hard to believe it's been three…</p>
+      <p class="post-excerpt">Three years in Manchester as an adult. What the city changed, what stayed the same, and a £2 chenille cardigan that I've worn three times this week.</p>
       <a href="/blog/three-years-one-city.html" class="read-more">Read more &rarr;</a>
     </li>
     <li>
       <div class="post-meta">January 12, 2025</div>
       <h2><a href="/blog/what-i-learned-about-style-2024.html">What I Learned About My Own Style in 2024</a></h2>
-      <p class="post-excerpt">As I look back on the past year, I'm struck by how much my style has evolved. I've always been someone who loves to experiment with fashion, trying out new…</p>
+      <p class="post-excerpt">Year-in-review, but for the wardrobe. What I actually wore vs what I bought, the mistake I made with midi skirts, and why the Burberry trench is still the best thing I own.</p>
       <a href="/blog/what-i-learned-about-style-2024.html" class="read-more">Read more &rarr;</a>
     </li>
     <li>
       <div class="post-meta">September 14, 2024</div>
       <h2><a href="/blog/september-manchester-thrift-guide.html">September in Manchester: Where to Start If You've Never Thrifted Here</a></h2>
-      <p class="post-excerpt">As the summer draws to a close, and the new academic year begins, I'm excited to welcome a fresh wave of students to Manchester. As someone who's been living in…</p>
+      <p class="post-excerpt">Back-to-uni season. A warm beginner's guide to the charity shop circuit I actually use, from Chorlton to the Northern Quarter.</p>
       <a href="/blog/september-manchester-thrift-guide.html" class="read-more">Read more &rarr;</a>
     </li>
     <li>
       <div class="post-meta">May 16, 2024</div>
       <h2><a href="/blog/six-months-of-receipts.html">Everything I Bought in the Last 6 Months (With Receipts)</a></h2>
-      <p class="post-excerpt">As I sit down to reflect on my fashion purchases over the past six months, I'm surprised by the sheer variety of items I've accumulated. From October 2023 to April…</p>
+      <p class="post-excerpt">A real tally of every fashion purchase from October 2023 to April 2024 with what I actually paid. Surprised by some of it. Honest about all of it.</p>
       <a href="/blog/six-months-of-receipts.html" class="read-more">Read more &rarr;</a>
     </li>
-</ul>
+  </ul>
+
 </main>
 <footer>
   <p>&copy; 2026 Fia Quinn &middot; Manchester &middot; <a href="mailto:fia@fiaquinn.co.uk">fia@fiaquinn.co.uk</a></p>
