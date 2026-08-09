@@ -307,3 +307,19 @@ footer a:hover { color: var(--accent); }
   .about-avatar { width: 90px; height: 90px; }
   nav { gap: 1.2rem; }
 }
+
+/* Header stacks on small phones. Adding Gallery to the nav on 2026-08-09 made
+   it four items, and measured on the live page the title plus nav needs about
+   336px against the 312px a 360px handset leaves after the header's padding --
+   so it overflowed on common Android widths and on an iPhone SE. Stacking is
+   used rather than shrinking type further, because it stays correct if a
+   fifth item is ever added. */
+@media (max-width: 480px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem 0;
+  }
+  nav { gap: 1.1rem; }
+  nav a { font-size: 0.8rem; }
+}
