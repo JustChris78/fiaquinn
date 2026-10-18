@@ -680,9 +680,9 @@ a:hover { text-decoration: underline; }
 
 .layout { display: flex; gap: 20px; padding: 20px 28px 60px; align-items: flex-start; }
 
-#filters { width: 270px; flex: 0 0 270px; background: var(--card); border: 1px solid var(--border);
-  border-radius: 12px; padding: 16px 18px; position: sticky; top: 20px;
-  max-height: calc(100vh - 40px); overflow-y: auto; }
+#filters { width: 270px; background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 18px; position: fixed; top: 20px; left: 28px;
+  max-height: calc(100vh - 40px); overflow-y: auto; overscroll-behavior: contain; }
 #filters h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
   margin: 0 0 12px; }
 .field { margin-bottom: 16px; }
@@ -711,7 +711,7 @@ select { width: 100%; background: #0f172a; border: 1px solid var(--border); bord
 #resetBtn:hover { border-color: var(--accent); }
 #resultCount { font-size: 12px; color: var(--muted); margin-top: 10px; }
 
-#results { flex: 1; }
+#results { flex: 1; margin-left: 290px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
   cursor: pointer; transition: border-color .15s, transform .1s; display: flex; flex-direction: column; }
