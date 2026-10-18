@@ -681,7 +681,8 @@ a:hover { text-decoration: underline; }
 .layout { display: flex; gap: 20px; padding: 20px 28px 60px; align-items: flex-start; }
 
 #filters { width: 270px; flex: 0 0 270px; background: var(--card); border: 1px solid var(--border);
-  border-radius: 12px; padding: 16px 18px; position: sticky; top: 90px; }
+  border-radius: 12px; padding: 16px 18px; position: sticky; top: 20px;
+  max-height: calc(100vh - 40px); overflow-y: auto; }
 #filters h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
   margin: 0 0 12px; }
 .field { margin-bottom: 16px; }
