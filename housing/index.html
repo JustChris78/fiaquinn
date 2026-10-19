@@ -816,6 +816,7 @@ select { width: 100%; background: #0f172a; border: 1px solid var(--border); bord
 #lightbox { position: fixed; inset: 0; background: rgba(2,4,8,0.95); display: none;
   align-items: center; justify-content: center; z-index: 200; padding: 20px; cursor: zoom-out; }
 #lightbox.open { display: flex; }
+#lightbox:fullscreen, #lightbox:-webkit-full-screen { width: 100vw; height: 100vh; background: rgba(2,4,8,0.98); }
 #lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; }
 #lightboxClose { position: absolute; top: 16px; right: 18px; background: rgba(255,255,255,0.12);
   color: #fff; border: none; border-radius: 999px; width: 38px; height: 38px; font-size: 20px;
@@ -1348,13 +1349,30 @@ function setGalleryImage(idx) {
 
 function openLightbox() {
   document.getElementById("lightboxImg").src = galleryImages[galleryIndex];
-  document.getElementById("lightbox").classList.add("open");
+  const lb = document.getElementById("lightbox");
+  lb.classList.add("open");
+  // Real Fullscreen API, not just a page-level CSS overlay -- added 2026-10-19
+  // after Chris confirmed the overlay alone wasn't enough: a fixed/z-index
+  // overlay sits on top of everything IN the page, but a phone's browser
+  // chrome (address bar, tab bar) still shows above the page itself. This
+  // requests the OS-level fullscreen that actually hides that chrome too.
+  // Must be called synchronously from the click handler (fullscreen requires
+  // a direct user gesture) -- it is, since this only ever runs from the
+  // gallery image's own click listener. Falls back silently to the overlay
+  // alone on anything that refuses fullscreen (some iOS Safari versions).
+  if (lb.requestFullscreen) { lb.requestFullscreen().catch(() => {}); }
 }
 function closeLightbox() {
   document.getElementById("lightbox").classList.remove("open");
+  if (document.fullscreenElement) { document.exitFullscreen().catch(() => {}); }
 }
 document.getElementById("lightbox").addEventListener("click", closeLightbox);
 document.getElementById("lightboxClose").addEventListener("click", (e) => { e.stopPropagation(); closeLightbox(); });
+// Keep state in sync if the user exits fullscreen via the OS/browser's own
+// control (swipe, back gesture, system button) rather than our close button.
+document.addEventListener("fullscreenchange", () => {
+  if (!document.fullscreenElement) document.getElementById("lightbox").classList.remove("open");
+});
 
 function openModal(id) {
   const l = LISTINGS.find(x => x.id === id);
